@@ -1,13 +1,95 @@
 <!DOCTYPE html><html><head>
+  <title>Release your stress!</title>
     <script src="p5.min.js"></script>
     <script src="p5.dom.min.js"></script>
     <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
 
+<script>
+
+function preload() {
+  before = loadImage('1.png');
+  after = loadImage('2.png');
+  img1 = loadImage('fist.png');
+  punch = loadSound("woosh.mp3");
+
+}
+
+function setup() {
+  createCanvas(600, 500);
+  noCursor();
+
+}
+
+function draw() {
+
+
+
+  if ((mouseX >= 300)&&(mouseX <=450)&&(mouseY <200)){
+  noTint();
+  imageMode(CORNER);
+  background(255);
+  background(before);
+  }
+
+
+
+  else {
+
+  imageMode(CORNER);
+  noTint();
+  background(0);
+  background(after);
+  }
+
+
+
+  noTint();
+  imageMode(CENTER);
+  image(img1,mouseX,mouseY,120,150);
+
+
+
+}
+
+function mousePressed() {
+punch.play();
+
+}
+
+</script>
+
+
+
+
+
+    <style>
+
+          body{
+            background-color: #194B5A;
+            text-align:center;
+          }
+
+          h1{
+            background-color: yellow;
+          }
+
+          p{
+            font-size: 38px;
+          }
+
+          canvas{
+            border: thin solid blue;
+          }
+        </style>
   </head>
   <body>
-    <script src="sketch.js"></script>
-  
+<h1>My name is stress</h1>
+<div id="sketech-div">
+
+</div>
+<p>Punch me</p>
 
 </body></html>
